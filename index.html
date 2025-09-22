@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio|Fahad_Al_Sadat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-[url('/img/img.jpg')] bg-cover bg-center shadow-sm w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-800 hover:text-red-600 transition">FAHAD AL SADAT</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-blue-800 font-bold hover:text-red-600 transition">Home</a>
+                    <a href="#about" class="text-blue-800 font-bold hover:text-red-600 transition">About</a>
+                    <a href="#skills" class="text-blue-800 font-bold hover:text-red-600 transition">Skills</a>
+                    <a href="#projects" class="text-blue-800 font-bold hover:text-red-600 transition">Projects</a>
+                    <a href="#contact" class="text-blue-800 font-bold hover:text-red-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600 hover:text-blue-800">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-20 pt-20 px-4">
+        <div class="flex flex-col space-y-6 text-center">
+            <a href="#home" class="text-blue-800 font-medium text-lg">Home</a>
+            <a href="#about" class="text-gray-600 text-lg">About</a>
+            <a href="#skills" class="text-gray-600 text-lg">Skills</a>
+            <a href="#projects" class="text-gray-600 text-lg">Projects</a>
+            <a href="#contact" class="text-gray-600 text-lg">Contact</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white min-h-screen flex items-center pt-16" id="vanta-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Fahad Al Sadat</h1>
+                    <h2 class="text-2xl md:text-3xl text-blue-300 mb-8">Assistant Network Engineer</h2>
+                    <p class="text-lg text-blue-100 mb-10 max-w-lg">Designing, implementing, and optimizing secure network infrastructures for businesses of all sizes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Contact Me</a>
+                        <a href="#projects" class="border border-blue-300 hover:bg-blue-900/30 text-white px-6 py-3 rounded-lg font-medium transition">View Projects</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-blue-600 rounded-2xl opacity-20 blur"></div>
+                        <img src="http://static.photos/technology/640x360/12345" alt="Network Engineer" class="relative rounded-xl w-full max-w-md shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Network Solutions Architect</h3>
+                    <p class="text-gray-600 mb-6">With over 1.5 years of experience in network engineering, I specialize in creating robust, scalable, and secure network infrastructures that drive business success.</p>
+                    <p class="text-gray-600 mb-8">My expertise spans across enterprise networking, cloud infrastructure, security protocols, and performance optimization. I'm passionate about solving complex networking challenges and implementing cutting-edge solutions.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i data-feather="award" class="text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Academic Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="briefcase" class="text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">15+ Projects</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="globe" class="text-blue-600 mr-2"></i>
+                            <span class="text-gray-700">Global Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="bg-blue-50 p-8 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">My Expertise</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Network Architecture</span>
+                                    <span class="text-blue-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Security Implementation</span>
+                                    <span class="text-blue-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Cloud Networking</span>
+                                    <span class="text-blue-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Troubleshooting</span>
+                                    <span class="text-blue-600">98%</span>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 98%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div data-aos="fade-up" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="cpu" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Network Infrastructure</h3>
+                    <p class="text-gray-600">Design and implementation of scalable network architectures including LAN, WAN, and data center networks.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Juniper</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Fortinet</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="shield" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Network Security</h3>
+                    <p class="text-gray-600">Implementation of comprehensive security measures including firewalls, VPNs, IDS/IPS, and access control.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Palo Alto</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Check Point</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco ASA</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="cloud" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Cloud Networking</h3>
+                    <p class="text-gray-600">Hybrid and multi-cloud networking solutions with AWS, Azure, and Google Cloud Platform.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">AWS</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Azure</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">GCP</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 4 -->
+                <div data-aos="fade-up" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="monitor" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Monitoring & Optimization</h3>
+                    <p class="text-gray-600">Network performance monitoring, analysis, and optimization using industry-leading tools.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">SolarWinds</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">PRTG</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Wireshark</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 5 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="code" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Automation & Scripting</h3>
+                    <p class="text-gray-600">Network automation using Python, Ansible, and other tools to improve efficiency and reduce errors.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Ansible</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Terraform</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 6 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Collaboration Solutions</h3>
+                    <p class="text-gray-600">Implementation of unified communications and collaboration platforms for enterprises.</p>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco UC</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Microsoft Teams</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Zoom</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div data-aos="fade-up" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/101" alt="Enterprise Network Upgrade" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Enterprise Network Upgrade</h3>
+                        <p class="text-blue-100 mb-4">Complete overhaul of corporate network infrastructure for a Fortune 500 company.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Cisco</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SD-WAN</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Security</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/102" alt="Cloud Migration" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Hybrid Cloud Migration</h3>
+                        <p class="text-blue-100 mb-4">Seamless migration of enterprise applications to AWS with secure connectivity.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">AWS</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Direct Connect</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Terraform</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/103" alt="Security Implementation" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Zero Trust Security Implementation</h3>
+                        <p class="text-blue-100 mb-4">Comprehensive security framework for a financial services organization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Palo Alto</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">ZTNA</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SASE</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div data-aos="fade-up" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/104" alt="Data Center" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Data Center Modernization</h3>
+                        <p class="text-blue-100 mb-4">Design and implementation of a next-generation data center network.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">ACI</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Nexus</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Automation</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/105" alt="SD-WAN" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Global SD-WAN Deployment</h3>
+                        <p class="text-blue-100 mb-4">Multi-country SD-WAN implementation for a manufacturing company.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SD-WAN</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">MPLS</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">QoS</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="project-card relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="http://static.photos/technology/640x360/106" alt="VoIP" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Unified Communications Deployment</h3>
+                        <p class="text-blue-100 mb-4">Enterprise-wide VoIP and collaboration platform implementation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Cisco UC</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">QoS</span>
+                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SIP</span>
+                        </div>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                    View All Projects <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"John completely transformed our network infrastructure. His expertise in SD-WAN implementation saved us 40% on connectivity costs while improving performance."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/101" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">CTO, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The security architecture John designed for our financial systems has withstood multiple penetration tests with zero vulnerabilities found. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/102" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">Director of Security, FinSecure</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Our cloud migration was seamless thanks to John's networking expertise. He designed a hybrid solution that gives us both flexibility and security."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/103" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">David Wilson</h4>
+                            <p class="text-sm text-gray-500">VP of IT, RetailChain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Let's discuss your network needs</h3>
+                    <p class="text-gray-600 mb-8">Whether you're planning a network upgrade, security implementation, or cloud migration, I'd love to hear about your project and how I can help.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i data-feather="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <a href="mailto:fahadalsadat@yahoo.com" class="text-gray-600 hover:text-blue-600">fahadalsadat@yahoo.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i data-feather="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone</h4>
+                                <a href="tel:+8801610977910" class="text-gray-600 hover:text-blue-600">+8801610977910</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i data-feather="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                                <p class="text-gray-600">Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/fahad-al-sadat/" target="_blank" 
+                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                            <i data-feather="linkedin" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.facebook.com/fahad.kabir.121/" target="_blank" 
+                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                            <i data-feather="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.instagram.com/f_a_sadat/" target="_blank" 
+                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                            <i data-feather="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <div class="mb-6">
+                          <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                          <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        </div>
+                        <div class="mb-6">
+                          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                          <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        </div>
+                        <div class="mb-6">
+                          <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                          <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                        </div>
+                        <div class="mb-6">
+                          <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                          <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                          Send Message
+                        </button>
+                      </form>
+                      
+                      <script>
+                      document.getElementById("contact-form").addEventListener("submit", function(e){
+                        e.preventDefault();
+                      
+                        fetch("https://script.google.com/macros/s/AKfycbwVIRHuGJZVSkDoNbFVvXqP_8yHu8pzfuBgh7032fmRvAGaZo4tqmMWAeU9X14zEVYb/exec", {
+                          method: "POST",
+                          body: JSON.stringify({
+                            name: document.getElementById("name").value,
+                            email: document.getElementById("email").value,
+                            subject: document.getElementById("subject").value,
+                            message: document.getElementById("message").value
+                          }),
+                          headers: {
+                            "Content-Type": "application/json"
+                          }
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                          alert("Message sent successfully!");
+                          document.getElementById("contact-form").reset();
+                        })
+                        .catch(err => console.error(err));
+                      });
+                      </script>
+                      
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Fahad Al Sadat</h3>
+                    <p class="text-gray-400">Assistant Network Engineer specializing in designing, implementing, and optimizing secure network infrastructures.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Certifications</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
+                            CCIE #12345
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
+                            CCNP Enterprise
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
+                            AWS Advanced Networking
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
+                            Palo Alto PCNSE
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 fahad al sadat. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/fahad-al-sadat/" target="_blank" 
+                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/fahad.kabir.121/" target="_blank" 
+                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/f_a_sadat/" target="_blank" 
+                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize Vanta.js
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x0f172a,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
