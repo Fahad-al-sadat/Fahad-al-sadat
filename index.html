@@ -1,678 +1,1167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio|Fahad_Al_Sadat</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <style>
-        .hero-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        }
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-    </style>
-</head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-[url('/img/img.jpg')] bg-cover bg-center shadow-sm w-full z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-blue-800 hover:text-red-600 transition">FAHAD AL SADAT</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-blue-800 font-bold hover:text-red-600 transition">Home</a>
-                    <a href="#about" class="text-blue-800 font-bold hover:text-red-600 transition">About</a>
-                    <a href="#skills" class="text-blue-800 font-bold hover:text-red-600 transition">Skills</a>
-                    <a href="#projects" class="text-blue-800 font-bold hover:text-red-600 transition">Projects</a>
-                    <a href="#contact" class="text-blue-800 font-bold hover:text-red-600 transition">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-600 hover:text-blue-800">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahad Al Sadat | Network Engineer & IT Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080C10;
+    --bg2: #0D1117;
+    --panel: #111820;
+    --border: #1E2D3D;
+    --accent: #00D4FF;
+    --accent2: #0088AA;
+    --accent3: #00FF88;
+    --text: #C9D8E8;
+    --muted: #5A7A94;
+    --white: #EEF4FA;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+  }
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-20 pt-20 px-4">
-        <div class="flex flex-col space-y-6 text-center">
-            <a href="#home" class="text-blue-800 font-medium text-lg">Home</a>
-            <a href="#about" class="text-gray-600 text-lg">About</a>
-            <a href="#skills" class="text-gray-600 text-lg">Skills</a>
-            <a href="#projects" class="text-gray-600 text-lg">Projects</a>
-            <a href="#contact" class="text-gray-600 text-lg">Contact</a>
-            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
-                <i data-feather="x"></i>
-            </button>
-        </div>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(8,12,16,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name span {
+    color: var(--accent);
+    display: block;
+  }
+
+  .hero-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 600px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: rgba(0,212,255,0.08);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .stat-item { }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 6rem 4rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+  }
+
+  /* ── ABOUT ── */
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+  }
+
+  .about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.2rem 1.5rem;
+    border-radius: 2px;
+  }
+
+  .info-card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .info-card-value {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* ── SKILLS ── */
+  #skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    border-radius: 2px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .skill-block:hover {
+    border-color: var(--accent2);
+    transform: translateY(-3px);
+  }
+
+  .skill-block-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    background: rgba(0,212,255,0.07);
+    border: 1px solid rgba(0,212,255,0.2);
+    color: var(--text);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .timeline-item.dim::before { background: var(--muted); box-shadow: 0 0 0 1px var(--muted); }
+
+  .tl-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+
+  .tl-role {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .tl-company {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+    font-style: italic;
+  }
+
+  .tl-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tl-bullets li {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 300;
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    border-bottom: 1px solid rgba(30,45,61,0.5);
+  }
+
+  .tl-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ── PROJECTS ── */
+  #projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 2px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .stack-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent3);
+    background: rgba(0,255,136,0.07);
+    border: 1px solid rgba(0,255,136,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  /* ── EDUCATION ── */
+  #education .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .edu-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.6rem;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .edu-card:hover { border-color: var(--accent2); }
+
+  .edu-degree {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CERTS ── */
+  #certifications .cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.5rem;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .cert-item:hover { border-color: var(--accent2); }
+
+  .cert-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 0.55rem;
+  }
+
+  .cert-name {
+    font-size: 0.9rem;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .cert-org {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    border-top: 1px solid var(--border);
+  }
+
+  #contact .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    color: var(--text);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .contact-link-icon {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: rgba(0,212,255,0.07);
+    border: 1px solid rgba(0,212,255,0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  /* ── FORM ── */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .form-input, .form-textarea {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+
+  .form-textarea { resize: vertical; min-height: 130px; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #home { padding: 7rem 1.5rem 3rem; }
+    section { padding: 4rem 1.5rem; }
+    #about .about-grid,
+    #contact .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">FAS_</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="home">
+  <div class="hero-inner">
+    <div class="hero-tag">Network Engineer & IT Professional</div>
+    <h1 class="hero-name">Fahad<span>Al Sadat</span></h1>
+    <p class="hero-title">// Network Operations · AI Security Research · IT Infrastructure</p>
+    <p class="hero-desc">
+      IT professional with hands-on experience in network engineering, ISP infrastructure, and system support.
+      Currently pursuing MSc in Computer Science at Jahangirnagar University, researching AI-powered network security.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Network Devices Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">SOPs Documented</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">AI/ML Projects</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Who I Am</h2>
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <p>
+        I'm a network engineer and IT professional based in Dhaka, Bangladesh, with nearly 5 years of
+        combined experience across ISP network operations, IT support, and education.
+      </p>
+      <p>
+        At Amber IT Ltd., I managed and monitored 20+ network devices including routers, switches,
+        and firewalls — handling everything from real-time bandwidth control with Zabbix NMS and MikroTik
+        Winbox to POP operations, SOP documentation, and vendor coordination.
+      </p>
+      <p>
+        I'm currently pursuing an MSc in Computer Science at Jahangirnagar University, where my
+        research focuses on AI-powered DNS-based anomaly detection — building systems that actively
+        identify and block malicious network activity in real time.
+      </p>
+      <p>
+        Beyond networking, I'm passionate about Python, automation, and the intersection of
+        machine learning and cybersecurity.
+      </p>
+    </div>
+    <div class="about-cards">
+      <div class="info-card">
+        <div class="info-card-label">Current Role</div>
+        <div class="info-card-value">IT Support Executive — Nobin Textile</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Education</div>
+        <div class="info-card-value">MSc Computer Science — Jahangirnagar University</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Location</div>
+        <div class="info-card-value">Dhaka, Bangladesh</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Specialization</div>
+        <div class="info-card-value">Network Engineering · AI Security · IT Infrastructure</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Languages</div>
+        <div class="info-card-value">Bangla (Native) · English (Professional)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid fade-in">
+    <div class="skill-block">
+      <div class="skill-block-title">Networking</div>
+      <div class="skill-tags">
+        <span class="tag">TCP/IP</span>
+        <span class="tag">IP Addressing</span>
+        <span class="tag">Routing & Switching</span>
+        <span class="tag">Firewall Management</span>
+        <span class="tag">OLT & Telnet</span>
+        <span class="tag">WireGuard VPN</span>
+        <span class="tag">LAN/WAN</span>
+        <span class="tag">DNS</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Tools & Platforms</div>
+      <div class="skill-tags">
+        <span class="tag">MikroTik (Winbox)</span>
+        <span class="tag">Zabbix NMS</span>
+        <span class="tag">Packet Tracer</span>
+        <span class="tag">VMware</span>
+        <span class="tag">VirtualBox</span>
+        <span class="tag">ERP/POS Software</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Programming</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">C</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+        <span class="tag">HTML5 & CSS3</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">DevOps & OS</div>
+      <div class="skill-tags">
+        <span class="tag">Ansible</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Linux (Ubuntu)</span>
+        <span class="tag">Windows Server</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Operations</div>
+      <div class="skill-tags">
+        <span class="tag">Network Troubleshooting</span>
+        <span class="tag">SOP Documentation</span>
+        <span class="tag">Vendor Coordination</span>
+        <span class="tag">IT Inventory Management</span>
+        <span class="tag">POP Maintenance</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">AI / ML (Research)</div>
+      <div class="skill-tags">
+        <span class="tag">YOLOv3</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Anomaly Detection</span>
+        <span class="tag">DNS Security</span>
+        <span class="tag">Computer Vision</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Work History</h2>
+  <div class="timeline fade-in">
+
+    <div class="timeline-item">
+      <div class="tl-date">NOV 2025 — PRESENT</div>
+      <div class="tl-role">IT Support Executive</div>
+      <div class="tl-company">Nobin Textile — Dholaipar, Jatrabari, Dhaka</div>
+      <ul class="tl-bullets">
+        <li>Manage and maintain the company website, ensuring up-to-date content and functionality.</li>
+        <li>Maintain accurate data records in ERP and POS software, improving operational data integrity.</li>
+        <li>Configure and troubleshoot LAN network infrastructure to ensure consistent office connectivity.</li>
+        <li>Provide comprehensive IT support across departments, resolving hardware, software, and network issues.</li>
+      </ul>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white min-h-screen flex items-center pt-16" id="vanta-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Fahad Al Sadat</h1>
-                    <h2 class="text-2xl md:text-3xl text-blue-300 mb-8">Assistant Network Engineer</h2>
-                    <p class="text-lg text-blue-100 mb-10 max-w-lg">Designing, implementing, and optimizing secure network infrastructures for businesses of all sizes.</p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Contact Me</a>
-                        <a href="#projects" class="border border-blue-300 hover:bg-blue-900/30 text-white px-6 py-3 rounded-lg font-medium transition">View Projects</a>
-                    </div>
-                </div>
-                <div data-aos="fade-left" class="flex justify-center">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-blue-600 rounded-2xl opacity-20 blur"></div>
-                        <img src="http://static.photos/technology/640x360/12345" alt="Network Engineer" class="relative rounded-xl w-full max-w-md shadow-2xl">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="timeline-item">
+      <div class="tl-date">FEB 2024 — OCT 2025</div>
+      <div class="tl-role">Assistant Network Engineer (POP In-charge)</div>
+      <div class="tl-company">Amber IT Ltd. — Navana Tower, Gulshan 1, Dhaka</div>
+      <ul class="tl-bullets">
+        <li>Configured and monitored 20+ network devices including routers, switches, and firewalls.</li>
+        <li>Used Zabbix NMS and Winbox (MikroTik) for real-time bandwidth control and fault isolation.</li>
+        <li>Managed POP operations to maintain service stability and end-user connectivity.</li>
+        <li>Created and maintained 50+ technical documents and SOPs for network operations.</li>
+        <li>Coordinated vendor relationships for equipment procurement and IT inventory management.</li>
+        <li>Led OLT & Telnet, routing, switching, and network management training within the team.</li>
+      </ul>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Network Solutions Architect</h3>
-                    <p class="text-gray-600 mb-6">With over 1.5 years of experience in network engineering, I specialize in creating robust, scalable, and secure network infrastructures that drive business success.</p>
-                    <p class="text-gray-600 mb-8">My expertise spans across enterprise networking, cloud infrastructure, security protocols, and performance optimization. I'm passionate about solving complex networking challenges and implementing cutting-edge solutions.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center">
-                            <i data-feather="award" class="text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">Academic Certified</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i data-feather="briefcase" class="text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">15+ Projects</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i data-feather="globe" class="text-blue-600 mr-2"></i>
-                            <span class="text-gray-700">Global Clients</span>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos="fade-left">
-                    <div class="bg-blue-50 p-8 rounded-xl shadow-sm">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-6">My Expertise</h4>
-                        <div class="space-y-6">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-700">Network Architecture</span>
-                                    <span class="text-blue-600">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-300 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-700">Security Implementation</span>
-                                    <span class="text-blue-600">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-300 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-700">Cloud Networking</span>
-                                    <span class="text-blue-600">85%</span>
-                                </div>
-                                <div class="w-full bg-gray-300 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-700">Troubleshooting</span>
-                                    <span class="text-blue-600">98%</span>
-                                </div>
-                                <div class="w-full bg-gray-300 rounded-full h-2">
-                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 98%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="timeline-item dim">
+      <div class="tl-date">FEB 2022 — AUG 2025</div>
+      <div class="tl-role">Lecturer</div>
+      <div class="tl-company">Conscious Creative Academy — Dania Bazar, Jatrabari, Dhaka</div>
+      <ul class="tl-bullets">
+        <li>Delivered ICT and science lessons; handled administrative and student counseling tasks.</li>
+      </ul>
+    </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
-                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Skill Card 1 -->
-                <div data-aos="fade-up" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="cpu" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Network Infrastructure</h3>
-                    <p class="text-gray-600">Design and implementation of scalable network architectures including LAN, WAN, and data center networks.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Juniper</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Fortinet</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 2 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="shield" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Network Security</h3>
-                    <p class="text-gray-600">Implementation of comprehensive security measures including firewalls, VPNs, IDS/IPS, and access control.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Palo Alto</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Check Point</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco ASA</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 3 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="cloud" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Cloud Networking</h3>
-                    <p class="text-gray-600">Hybrid and multi-cloud networking solutions with AWS, Azure, and Google Cloud Platform.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">AWS</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Azure</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">GCP</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 4 -->
-                <div data-aos="fade-up" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="monitor" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Monitoring & Optimization</h3>
-                    <p class="text-gray-600">Network performance monitoring, analysis, and optimization using industry-leading tools.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">SolarWinds</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">PRTG</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Wireshark</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 5 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="code" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Automation & Scripting</h3>
-                    <p class="text-gray-600">Network automation using Python, Ansible, and other tools to improve efficiency and reduce errors.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Python</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Ansible</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Terraform</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 6 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="skill-card bg-white p-8 rounded-xl shadow-sm transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i data-feather="users" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl bg-blue-100 font-semibold text-gray-800 mb-3">Collaboration Solutions</h3>
-                    <p class="text-gray-600">Implementation of unified communications and collaboration platforms for enterprises.</p>
-                    <div class="mt-6">
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Cisco UC</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Microsoft Teams</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">Zoom</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="timeline-item dim">
+      <div class="tl-date">JUN 2021 — DEC 2021</div>
+      <div class="tl-role">Lecturer</div>
+      <div class="tl-company">South City Ideal School and College — Dania, Jatrabari, Dhaka</div>
+      <ul class="tl-bullets">
+        <li>Taught core subjects; supported student counseling and class management activities.</li>
+      </ul>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div data-aos="fade-up" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/101" alt="Enterprise Network Upgrade" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Enterprise Network Upgrade</h3>
-                        <p class="text-blue-100 mb-4">Complete overhaul of corporate network infrastructure for a Fortune 500 company.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Cisco</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SD-WAN</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Security</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/102" alt="Cloud Migration" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Hybrid Cloud Migration</h3>
-                        <p class="text-blue-100 mb-4">Seamless migration of enterprise applications to AWS with secure connectivity.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">AWS</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Direct Connect</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Terraform</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/103" alt="Security Implementation" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Zero Trust Security Implementation</h3>
-                        <p class="text-blue-100 mb-4">Comprehensive security framework for a financial services organization.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Palo Alto</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">ZTNA</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SASE</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div data-aos="fade-up" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/104" alt="Data Center" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Data Center Modernization</h3>
-                        <p class="text-blue-100 mb-4">Design and implementation of a next-generation data center network.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">ACI</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Nexus</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Automation</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/105" alt="SD-WAN" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Global SD-WAN Deployment</h3>
-                        <p class="text-blue-100 mb-4">Multi-country SD-WAN implementation for a manufacturing company.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SD-WAN</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">MPLS</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">QoS</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="project-card relative rounded-xl overflow-hidden shadow-lg">
-                    <img src="http://static.photos/technology/640x360/106" alt="VoIP" class="w-full h-64 object-cover">
-                    <div class="project-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center p-6 opacity-0 transition duration-300">
-                        <h3 class="text-xl font-bold text-white mb-2">Unified Communications Deployment</h3>
-                        <p class="text-blue-100 mb-4">Enterprise-wide VoIP and collaboration platform implementation.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">Cisco UC</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">QoS</span>
-                            <span class="bg-blue-800 text-blue-100 text-xs px-2 py-1 rounded">SIP</span>
-                        </div>
-                        <a href="#" class="text-white font-medium inline-flex items-center">
-                            View Details <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
-                    View All Projects <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
-                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"John completely transformed our network infrastructure. His expertise in SD-WAN implementation saved us 40% on connectivity costs while improving performance."</p>
-                    <div class="flex items-center">
-                        <img src="http://static.photos/people/200x200/101" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-500">CTO, TechCorp</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"The security architecture John designed for our financial systems has withstood multiple penetration tests with zero vulnerabilities found. Highly recommended!"</p>
-                    <div class="flex items-center">
-                        <img src="http://static.photos/people/200x200/102" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
-                            <p class="text-sm text-gray-500">Director of Security, FinSecure</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Our cloud migration was seamless thanks to John's networking expertise. He designed a hybrid solution that gives us both flexibility and security."</p>
-                    <div class="flex items-center">
-                        <img src="http://static.photos/people/200x200/103" alt="Client" class="w-12 h-12 rounded-full mr-4 object-cover">
-                        <div>
-                            <h4 class="font-semibold text-gray-800">David Wilson</h4>
-                            <p class="text-sm text-gray-500">VP of IT, RetailChain</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">Key Projects</h2>
+  <div class="projects-grid fade-in">
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                <div data-aos="fade-up" data-aos-delay="100" class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Let's discuss your network needs</h3>
-                    <p class="text-gray-600 mb-8">Whether you're planning a network upgrade, security implementation, or cloud migration, I'd love to hear about your project and how I can help.</p>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-blue-600 mr-4 mt-1">
-                                <i data-feather="mail" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
-                                <a href="mailto:fahadalsadat@yahoo.com" class="text-gray-600 hover:text-blue-600">fahadalsadat@yahoo.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-blue-600 mr-4 mt-1">
-                                <i data-feather="phone" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Phone</h4>
-                                <a href="tel:+8801610977910" class="text-gray-600 hover:text-blue-600">+8801610977910</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="text-blue-600 mr-4 mt-1">
-                                <i data-feather="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Location</h4>
-                                <p class="text-gray-600">Dhaka, Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-10 flex space-x-4">
-                        <a href="https://www.linkedin.com/in/fahad-al-sadat/" target="_blank" 
-                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
-                            <i data-feather="linkedin" class="w-6 h-6"></i>
-                        </a>
-                        <a href="https://www.facebook.com/fahad.kabir.121/" target="_blank" 
-                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
-                            <i data-feather="facebook" class="w-6 h-6"></i>
-                        </a>
-                        <a href="https://www.instagram.com/f_a_sadat/" target="_blank" 
-                        rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
-                            <i data-feather="instagram" class="w-6 h-6"></i>
-                        </a>
-                    </div>
-                </div>
-                <div data-aos="fade-left">
-                    <form id="contact-form" class="bg-gray-50 p-8 rounded-xl shadow-sm">
-                        <div class="mb-6">
-                          <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                          <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                        </div>
-                        <div class="mb-6">
-                          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                          <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                        </div>
-                        <div class="mb-6">
-                          <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                          <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                        </div>
-                        <div class="mb-6">
-                          <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                          <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
-                          Send Message
-                        </button>
-                      </form>
-                      
-                      <script>
-                      document.getElementById("contact-form").addEventListener("submit", function(e){
-                        e.preventDefault();
-                      
-                        fetch("https://script.google.com/macros/s/AKfycbwVIRHuGJZVSkDoNbFVvXqP_8yHu8pzfuBgh7032fmRvAGaZo4tqmMWAeU9X14zEVYb/exec", {
-                          method: "POST",
-                          body: JSON.stringify({
-                            name: document.getElementById("name").value,
-                            email: document.getElementById("email").value,
-                            subject: document.getElementById("subject").value,
-                            message: document.getElementById("message").value
-                          }),
-                          headers: {
-                            "Content-Type": "application/json"
-                          }
-                        })
-                        .then(res => res.json())
-                        .then(data => {
-                          alert("Message sent successfully!");
-                          document.getElementById("contact-form").reset();
-                        })
-                        .catch(err => console.error(err));
-                      });
-                      </script>
-                      
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="project-card">
+      <div class="project-icon">🛡️</div>
+      <div class="project-title">DNS SHIELD</div>
+      <p class="project-desc">
+        AI-powered DNS-based anomaly detection system designed for enterprise environments.
+        Leverages machine learning to identify and block malicious network activity in real time
+        by correlating DNS query patterns with threat intelligence feeds.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">DNS Filtering</span>
+        <span class="stack-tag">Anomaly Detection</span>
+        <span class="stack-tag">AI/ML</span>
+        <span class="stack-tag">MSc Research</span>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Fahad Al Sadat</h3>
-                    <p class="text-gray-400">Assistant Network Engineer specializing in designing, implementing, and optimizing secure network infrastructures.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
-                        <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Certifications</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center">
-                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
-                            CCIE #12345
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
-                            CCNP Enterprise
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
-                            AWS Advanced Networking
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-blue-400"></i>
-                            Palo Alto PCNSE
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2025 fahad al sadat. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/fahad-al-sadat/" target="_blank" 
-                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                        <i data-feather="linkedin"></i>
-                    </a>
-                    <a href="https://www.facebook.com/fahad.kabir.121/" target="_blank" 
-                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                        <i data-feather="facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/f_a_sadat/" target="_blank" 
-                    rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
-                        <i data-feather="instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div class="project-card">
+      <div class="project-icon">👁️</div>
+      <div class="project-title">Real-Time Object Detection</div>
+      <p class="project-desc">
+        Computer vision system for live video-based object detection in smart surveillance scenarios.
+        Optimized inference pipeline to minimize latency for real-time IoT deployment.
+        Applicable in autonomous vehicles, surveillance, and robotics.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">YOLOv3</span>
+        <span class="stack-tag">NumPy</span>
+        <span class="stack-tag">Computer Vision</span>
+        <span class="stack-tag">IoT</span>
+      </div>
+    </div>
 
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
+    <div class="project-card">
+      <div class="project-icon">🌐</div>
+      <div class="project-title">ISP Network Operations</div>
+      <p class="project-desc">
+        End-to-end management of ISP network infrastructure at Amber IT Ltd. — configuration,
+        monitoring, POP maintenance, and documentation of 20+ devices across a live production network
+        serving enterprise and residential clients.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">MikroTik</span>
+        <span class="stack-tag">Zabbix NMS</span>
+        <span class="stack-tag">TCP/IP</span>
+        <span class="stack-tag">Firewall</span>
+        <span class="stack-tag">OLT</span>
+      </div>
+    </div>
 
-        // Initialize Vanta.js
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3b82f6,
-            backgroundColor: 0x0f172a,
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 18.00
-        });
+  </div>
+</section>
 
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const closeBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-grid fade-in">
+    <div class="edu-card">
+      <div class="edu-degree">MSc — Computer Science</div>
+      <div class="edu-school">Jahangirnagar University</div>
+      <div class="edu-meta">2025 – Ongoing · GPA: 3.33/4.0 · Research: DNS Anomaly Detection</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">BSc — Computer Science & Engineering</div>
+      <div class="edu-school">National University of Bangladesh</div>
+      <div class="edu-meta">2023 · GPA: 3.28/4.0 · Project: Real-Time Object Detection</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">HSC — Science</div>
+      <div class="edu-school">Dania University College</div>
+      <div class="edu-meta">2017 · GPA: 4.58/5.0</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">SSC — Science</div>
+      <div class="edu-school">A.K. High School and College</div>
+      <div class="edu-meta">2015 · GPA: 4.89/5.0 · Jaynul Abedin Memorial Scholarship</div>
+    </div>
+  </div>
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
+  <br><br>
+  <div class="section-label">Certifications</div>
+  <h2 class="section-title" style="margin-bottom:1.5rem;">Certifications & Training</h2>
+  <div class="cert-list fade-in">
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">CCNA 200-301 Network Fundamentals</div>
+        <div class="cert-org">Simplilearn | SkillUp · 2024</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">MTCNA — MikroTik Certified Network Associate</div>
+        <div class="cert-org">Amber IT Ltd. · 2024 (Hands-on, Live Production Network)</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">OLT & Telnet: Routing, Switching & Network Management</div>
+        <div class="cert-org">Amber IT Ltd. · 2024</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Front-End Development — HTML & CSS</div>
+        <div class="cert-org">Great Learning · 2023</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Digital Marketing Fundamentals</div>
+        <div class="cert-org">IIDE — Indian Institute of Digital Education · 2021</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">4-Star C Programmer</div>
+        <div class="cert-org">HackerRank · Data Structures & Algorithms</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="contact-grid fade-in">
+    <div class="contact-info">
+      <p>Open to network engineering, SQA, MTO, or IT roles. Feel free to reach out via email or LinkedIn.</p>
+      <div class="contact-links">
+        <a href="mailto:fahadalsadat@yahoo.com" class="contact-link">
+          <span class="contact-link-icon">@</span>
+          fahadalsadat@yahoo.com
+        </a>
+        <a href="tel:+8801610977910" class="contact-link">
+          <span class="contact-link-icon">☎</span>
+          +880 1610-977910
+        </a>
+        <a href="https://www.linkedin.com/in/fahad-al-sadat/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">in</span>
+          linkedin.com/in/fahad-al-sadat
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">📍</span>
+          Dhaka, Bangladesh
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Your message..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;text-align:center;">Send Message</button>
+    </form>
+  </div>
+</section>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-        });
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Fahad Al Sadat Shafi &nbsp;·&nbsp; Dhaka, Bangladesh &nbsp;·&nbsp; Built with passion</p>
+</footer>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Feather icons
-        feather.replace();
-    </script>
+  // Form submit placeholder
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = 'var(--accent3)';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+  }
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section, #home');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
 </body>
 </html>
