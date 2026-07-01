@@ -65,9 +65,9 @@ Network Engineer | Linux Enthusiast | Python Developer | Network Automation | AI
 
 <p align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Fahad-al-sadat&show_icons=true&theme=github_dark&hide_border=true"/>
+<img height="170" src="https://github-readme-stats-one-bice.vercel.app/api?username=Fahad-al-sadat&show_icons=true&theme=github_dark&hide_border=true"/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Fahad-al-sadat&layout=compact&theme=github_dark&hide_border=true"/>
+<img height="170" src="https://github-readme-stats-one-bice.vercel.app/api/top-langs/?username=Fahad-al-sadat&layout=compact&theme=github_dark&hide_border=true"/>
 
 </p>
 
