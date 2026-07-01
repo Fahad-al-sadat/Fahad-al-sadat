@@ -20,7 +20,7 @@ I enjoy building practical networking solutions, automating repetitive tasks wit
 
 🎯 **Current Goal**
 
-Become an **International Network / Infrastructure Engineer** and contribute to building secure, scalable, and automated network systems.
+Become an **International Network / Infrastructure Engineer** and contribute to building secure,scalable, and automated network systems.
 
 ---
 
