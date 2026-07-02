@@ -20,7 +20,7 @@ Network Engineer | Linux Enthusiast | Python Developer | Network Automation | AI
 - 🎓 MSc in Computer Science & Engineering
 - 🔬 Researching **AI-powered DNS Anomaly Detection (DNS Shield)**
 - 🌱 Currently learning **Linux, Docker, Python, Cloud & Network Automation**
-- 🎯 Goal: **Network / Infrastructure Engineer in Europe**
+- 🎯 Goal: **Network / Infrastructure Engineer**
 
 ---
 
